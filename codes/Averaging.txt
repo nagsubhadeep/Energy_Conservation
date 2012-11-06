@@ -1,0 +1,12 @@
+AverageAlgo (Average_Feedback, Sum_Feedback)
+//Executes every hour
+	
+Sum_Feedback			: Variable that contains the sum of feedback values.
+Average_Feedback		: Variable to store the average Feedback.
+
+BEGIN
+	//Calculate the average feedback.
+	Average_Feedback = Sum_Feedback / 60;
+	//Insert the average value into data_table of the database in the appropriate field.
+	UPDATE data_table SET feedback = Average_Feedback WHERE date = CurrentDate();  	
+END

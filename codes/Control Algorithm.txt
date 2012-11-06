@@ -1,0 +1,20 @@
+ControlAlgo (Intensity_ip, Count_ip, Op_port)
+
+Intensity_ip	: Intensity of ambient light.
+Count_ip		: Count of number of people inside the room.
+Op_port		: Port to change the intensity of the room light.
+
+BEGIN
+Loop1:		If (Count_ip ==0)  then  //Checks if the number of people in a room are 0.
+			Op_port =0;
+			WaitAlgo(Intensity_ip);
+Else
+			//gets the learned intensity from the database.
+			X = select learned from ML_TABLE where weekday = today
+			//Calculates the value of intensity of the room light based on learned value and current ambient light intensity.
+			Op_port = X - intensity_ip;
+			
+			 
+			WaitAlgo(Intensity_ip);
+
+END

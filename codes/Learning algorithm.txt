@@ -1,0 +1,17 @@
+LearnAlgo( Learned_Intensity, Sum_Learned_Intensity)
+// Executes once a day.
+
+
+Learned_Intensity [24]		: The intensity values learned for a day.
+Sum_Learned_Intensity		:  Contains the sum of intensities of the last 15 weeks.
+
+BEGIN
+	For i = 1 to 24 do
+		For j=1 to 15
+		//Find out the sum of the feedback intensity from the data_table for the current weekday.
+			Sum_Learned_Intensity  = Sum_Learned_Intensity +  SELECT feedback(i)  FROM data_table WHERE  date = CurrentDate() – (7*j);
+		END j
+		//Update the table ML_TABLE for all the hours of the day.
+		UPDATE ML_TABLE  SET Learned(i) = Sum_Learned_Intensity / 15;
+	END i
+END

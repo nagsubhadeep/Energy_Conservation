@@ -1,0 +1,22 @@
+WaitAlgo(old_intensity, count_ip, Intensity_ip)
+
+old_intensity		: Intensity reading passed from ControlAlgo
+count_ip			: Count value from the input port
+Intensity_ip		: Intensity reading from the input port
+
+BEGIN
+	new_intensity = Intensity_ip;
+	if (count != 0)
+	{
+	
+		If (( new_intensity_ip  >=  old_intensity * 110/100) || new_intensity_ip  <= old_intensity * 90/100) then
+		
+			//System reevaluates if the intensity of ambient light changes by more than 10%.
+	
+			Return();
+	
+	}
+	else
+		wait(30*1000);
+	
+END

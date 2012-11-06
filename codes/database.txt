@@ -1,0 +1,19 @@
+
+C:\www\mysql\bin> mysql -u root -p
+
+
+create table ml_table (weekday varchar(10), lv1 int,  lv2 int,  lv3 int,  lv4 int,  lv5 int,  lv6 int,  lv7 int,  lv8 int,  lv9 int,  lv10 int,  lv11 int,  lv12 int,  lv13 int,  lv14 int,  lv15 int,  lv16 int,  lv17 int,  lv18 int,  lv19 int,  lv20 int,  lv21 int,  lv22 int,  lv23 int,  lv24 int); 
+
+
+create table light_table (sno int NOT NULL AUTO_INCREMENT, dt date, weekday varchar(10), fd1 int,  fd2 int,  fd3 int,  fd4 int,  fd5 int,  fd6 int,  fd7 int,  fd8 int,  fd9 int,  fd10 int,  fd11 int,  fd12 int,  fd13 int,  fd14 int,  fd15 int,  fd16 int,  fd17 int,  fd18 int,  fd19 int,  fd20 int,  fd21 int,  fd22 int,  fd23 int,  fd24 int, PRIMARY KEY (sno, dt));
+
+
+insert into light_table values (((select sno from light_table where max(dt)) + 1), CURRENT_DATE(),"monday", 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+
+
+dt,weekday,fd1,fd2,fd3,fd4,fd5,fd6,fd7,fd8,fd9,fd10,fd11,fd12,fd13,fd14,fd15,fd16,fd17,fd18,fd19,fd20,fd21,fd22,fd23,fd24
+
+ALTER TABLE nl_table AUTO_INCREMENT = 1;
+
+
+

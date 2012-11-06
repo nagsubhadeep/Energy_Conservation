@@ -1,0 +1,16 @@
+SumAlgo(Sum_Intensity, Current_Intensity, Sum_Feedback, Current_feeback)
+//Executes every minute.
+
+Sum_Intensity		: Sum of the intensity readings.
+Current_Intensity	: As passed by the sensor.
+Sum_Feedback		: Sum of the feedback values.
+Current_feeback	: Current feedback.
+
+
+INITIALIZE:
+	Sum_Intensity = 0
+	Sum_Feedback = 0
+BEGIN
+	Sum_Intensity = Sum_Intensity + Current_Intensity;
+	Sum_Feedback = Sum_Feedback + Current_Feedback;
+END
